@@ -1,0 +1,8 @@
+node_modules
+logs/*.log
+.git
+/build/sample/tags/*.js
+/public/upload
+/config.json
+
+/npm-debug.log

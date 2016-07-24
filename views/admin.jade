@@ -1,0 +1,63 @@
+doctype html
+html
+  head
+    title HUMANCONTROL-ADMIN
+    link(rel='stylesheet' href='css/admin.css')
+    script(src="https://code.jquery.com/jquery-3.0.0.js" integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo=" crossorigin="anonymous")
+  body
+    main
+      table
+        thead
+          tr
+            td.name-column
+              | Имя
+            td.email-column
+              | Email
+            td.phone-column
+              | Телефон
+            td.message-column
+              | Сообщение / комментарий
+            td.button-column
+            td.button-column
+          tr
+            td
+              input(type="text" name="name" placeholder="Имя")
+            td
+              input(type="email" name="email" placeholder="Email")
+            td
+              input(type="tel" name="phone" placeholder="Телефон")
+            td
+              textarea(name="message" placeholder="Комментарий")
+            td
+              button.add Добавить
+            td
+        tbody
+          - var contacts = [{name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}, {name: "Zorg Zorg", email: "zorg@zorg.zorg", phone:"666", message: "Zorg!"}]
+          each contact in contacts
+            tr
+              td
+                span.display-contact= contact.name
+                input.edit-contact(type="text" name="name" placeholder="Имя" value=contact.name)
+              td
+                span.display-contact= contact.email
+                input.edit-contact(type="email" name="email" placeholder="Имя" value=contact.email)
+              td
+                span.display-contact= contact.phone
+                input.edit-contact(type="tel" name="phone" placeholder="Имя" value=contact.phone)
+              td
+                span.display-contact= contact.message
+                textarea.edit-contact(name="message" placeholder="Имя" value=contact.message)
+              td
+                button.display-contact.edit Редактировать
+                button.edit-contact.save Сохранить
+              td
+                button.display-contact.delete Удалить
+                button.edit-contact.cancel Отменить
+
+  script
+    :coffee-script
+      $(".edit").on "click", (e) ->
+        $(e.target).closest("tr").find(".display-contact").hide().siblings(".edit-contact").show()
+        $(e.target).closest("tr").find("textarea").val("ZORG!")
+      $(".cancel").on "click", (e) ->
+        $(e.target).closest("tr").find(".display-contact").show().siblings(".edit-contact").hide()

@@ -1,0 +1,40 @@
+body {
+  height: 100%;
+}
+main {
+  height: 100%;
+}
+table {
+  height: 100%;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+tbody {
+  height: 750px;
+  overflow-y: scroll;
+}
+td {
+  vertical-align: top;
+  border-bottom: 1px solid #808080;
+  padding: 5px;
+}
+tr:hover {
+  background: #f2f2f2;
+}
+input,
+textarea {
+  width: 100%;
+}
+.edit-contact {
+  display: none;
+}
+.message-column {
+  width: 40%;
+}
+.button-column {
+  width: 150px;
+}
+button {
+  width: 140px;
+}

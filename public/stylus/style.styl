@@ -1,0 +1,868 @@
+/*FONTS*/
+
+@font-face
+  font-family magistral
+  src url(/fonts/Magistral.TTF)
+  font-weight normal
+
+@font-face
+  font-family magistral-bold
+  src url(/fonts/Magistral Bold.TTF)
+  font-weight bold
+
+@font-face
+  font-family intro-book
+  src url(/fonts/Intro-Book.ttf)
+
+@font-face
+  font-family intro-light
+  src url(/fonts/Intro-Light.ttf)
+  font-style normal
+
+@font-face
+  font-family intro-light-italic
+  src url(/fonts/Intro-Light-italic.ttf)
+  font-style italic
+
+@font-face
+  font-family intro-regular
+  src url(/fonts/Intro-Regular.ttf)
+
+@font-face
+  font-family neusa-semibold
+  src url(/fonts/Neusa-SemiBold.otf)
+
+/*VAR*/
+
+header-background-img = url(/img/header-background.png) 100% 100% no-repeat
+footer-background-img = url(/img/footer-background.png) 100% 100% no-repeat
+menu-background-img = url(/img/menu-background.png) 100% 100% no-repeat
+content-background = #dddddd
+
+heading-font = neusa-semibold
+slogan-font = magistral
+main-font = intro-light
+secondary-font = intro-book
+menu-font = intro-regular
+
+link-color = #101010
+link-color-hover = #d02350
+link-color-active = #d02350
+
+/*LAYOUT*/
+
+html
+  min-height 100%
+  display flex
+
+body
+  position relative
+  display flex
+  flex-direction column
+  justify-content space-between
+  width 100%
+  min-height 100%
+  margin 0
+  font-family main-font
+  background-color content-background
+  align-items center
+  overflow hidden
+
+main
+  flex-grow 1
+  margin-bottom -60px
+  width 100%
+  display flex
+  flex-direction column
+  align-items center
+  overflow hidden
+
+.white-screen
+  opacity 0
+  position fixed
+  height 100%
+  width 100%
+  z-index 5
+  background-color white
+  left 0px
+
+/*BASICS*/
+
+*
+  box-sizing border-box
+
+a
+  color link-color
+  text-decoration none
+  &:hover
+    color link-color-hover
+  &:active
+    color link-color-active
+
+ul
+  list-style none
+  margin 0
+  padding 0
+
+.hidden
+  display none
+
+.ellipse
+  position absolute
+  left -110px
+  bottom -35px
+
+.clearfix:after
+  content ""
+  display table
+  clear both
+
+/*HEADER*/
+
+header
+  background header-background-img
+  background-size 100% 100%
+  z-index 4
+  width 100%
+  min-height 160px
+
+.header-right
+  display flex
+
+.header-content
+  position relative
+  height 135px
+  margin 0 auto 25px
+  width 820px
+  display flex
+  flex-direction row
+  justify-content space-between
+
+.header-logo
+  display flex
+  a
+    margin auto 0
+  img
+    height 85px
+    display block
+
+.header-contacts
+  display flex
+  flex-direction column
+  align-items flex-end
+  margin auto 0
+  font-family slogan-font
+  .header-mail
+    font-size 17px
+  a
+    font-size 25px
+    font-weight bold
+    display flex
+    flex-direction row
+    align-items center
+    margin 5px 0
+    justify-content space-between
+    width 100%
+  span
+    margin-right 15px
+    font-size 20px
+
+/*MENU*/
+
+.header-menu
+  position absolute
+  height 60px
+  width 820px
+  left 50%
+  margin-left -410px
+  top 135px
+  background menu-background-img
+  background-size 100% 100%
+  z-index 2
+  ul
+    display flex
+    flex-direction row
+    justify-content space-between
+    align-items flex-end
+    height 45px
+    padding 0 30px
+    
+.mobile-menu
+.header-menu
+  li
+    position relative
+    font-family menu-font
+    font-size 15px
+    cursor pointer
+    text-align center
+    z-index 2
+    &.active
+    &:hover
+      font-size 16px
+      a
+        color link-color-hover
+      img
+        display block
+  img
+    display none
+    position absolute
+    left 0
+    bottom -2px
+
+.main-page-menu
+  top 50px
+
+.menu-main
+  width 60px
+
+.menu-branding
+  width 74px
+
+.menu-creative
+  width 64px
+
+.menu-reengineering
+  width 111px
+
+.menu-marketing
+  width 82px
+
+.menu-team
+  width 66px
+
+.menu-contacts
+  width 72px
+
+/*FOOTER*/
+
+footer
+  background footer-background-img
+  background-size 100% 100%
+  min-height 170px
+  color white
+  display flex
+  flex-direction column
+  justify-content flex-start
+  padding-top 80px
+  width 100%
+  z-index 2
+
+.footer-content
+  margin 0 auto
+  width 820px
+  display flex
+  flex-direction row
+  justify-content space-between
+  height 56px
+  div
+    display flex
+    flex-wrap wrap
+    align-items center
+
+.footer-left-slogan
+  font-family secondary-font
+  font-size 28.6px
+
+.footer-right-slogan
+  font-family main-font
+  text-align right
+  font-size 16.9px
+
+/*MAIN PAGE*/
+
+.main-page-content
+  position relative
+  height 100%
+  width 820px
+  display flex
+  flex-direction column
+  flex-grow 1
+
+.main-page-brain-img
+  position relative
+  flex-grow 1
+  height 100%
+  .hover-brain-branding,
+  .hover-brain-creative,
+  .hover-brain-reengineering,
+  .hover-brain-marketing,
+  .brain-pink,
+  .brain-gray
+    position absolute
+    bottom -15px
+    width 690
+
+.clickable-brain-pink
+  cursor pointer
+
+.main-page-slogan
+  position absolute
+  font-family slogan-font
+  font-size 34px
+  text-align right
+  right 0px
+  bottom 315px
+
+.counter
+  position absolute
+  bottom 65px
+  left 496px
+
+.counter-numbers
+  position absolute
+  bottom 9px
+  right 5px
+  width 126px
+  height 82px
+  line-height 82px
+  color #f066a3
+  font-family slogan-font
+  font-size 50px
+  text-align left
+  padding-left 15px
+
+/*PRODUCT PAGE*/
+
+.product-page
+  background url(/img/ellipse.png) center top no-repeat
+  margin-top -60px
+  padding-top 90px
+  margin-left -90px
+  padding-left 90px
+
+.product-page-content
+  display flex
+  flex-direction row
+  position relative
+  height 100%
+  width 820px
+  flex-grow 1
+  h1,
+  h2
+    font-family heading-font
+    font-size 31px
+    line-height 31px
+    margin 30px 0 20px
+  ul
+    font-size 15px
+    font-family secondary-font
+  li
+    padding-left 10px
+    position relative
+    margin-bottom 3px
+  li::before
+    content ""
+    position absolute
+    background url(/img/bullet.png) no-repeat
+    background-size contain
+    width 6px
+    height 6px
+    left 0
+    top 7px
+  p
+    font-family main-font
+    font-size 14px
+    text-align justify
+    margin-bottom 15px
+
+.neuro-info
+  padding-right 20px
+
+.neuro-info,
+.product-info
+  width 50%
+
+.product-page-img
+  position absolute
+  img
+    width 80%
+
+.creative-page .product-page-img
+  left -290px
+  bottom -100px
+
+.marketing-page .product-page-img
+  left -290px
+  bottom -190px
+
+.reengineering-page .product-page-img
+  left -290px
+  bottom -190px
+
+.branding-page .product-page-img
+  left -290px
+  bottom -190px
+
+/*TEAM PAGE*/
+
+.team-page-content
+  display flex
+  flex-direction row
+  position relative
+  height 100%
+  width 820px
+  flex-grow 1
+  li
+    width 25%
+    text-align center
+  .info
+    margin-bottom 20px
+    min-height 130px
+    padding 0 5px
+  .name
+    font-family heading-font
+    font-size 22px
+    margin 0 0 20px 0
+  p
+    font-family secondary-font
+    font-size 12px
+    margin-bottom 15px
+
+.team-list
+  display flex
+  flex-direction row
+  justify-content space-between
+  align-items flex-end
+
+.photo
+  display flex
+  flex-direction row
+  justify-content center
+  width 120px
+  height 260px
+  margin 0 auto
+
+/*MAP*/
+
+.contacts-page
+  margin-top -30px
+  position relative
+  h1
+    font-family main-font
+    font-size 16px
+    margin 10 0 20px 0
+
+.contacts-page-content
+  display flex
+  flex-direction row
+  position relative
+  width 820px
+  height 0
+
+#map
+  width 100%
+  min-height 600px
+  flex-grow 1
+  z-index 1
+
+.form-field
+  width 367px
+  height 347px
+  background url(/img/form-field.png)
+  position absolute
+  right 10px
+  bottom 90px
+  z-index 2
+  form
+    padding 15px 30px
+
+input,
+textarea
+  border 1px solid #aaaaaa
+  border-radius 6px
+  margin-bottom 10px
+  font-family main-font
+  font-style italic
+  font-size 15px
+
+input
+  width 220px
+  height 30px
+  padding 0 10px
+
+textarea
+  width 100%
+  height 85px
+  resize none
+  padding 10px
+
+.submit
+  width 166px
+  margin-bottom 0
+  font-family main-font
+  font-size 12px
+  color white
+  border-color #de9dba
+  background-color #cf7fa2
+  cursor pointer
+  font-style normal
+  &:active,
+  &:hover
+    border-color #bc7996
+    background-color #a85e7e
+
+/*BRAIN DAMAGE*/
+
+.brain-piece
+  position fixed
+  z-index 4
+
+.brain-piece1
+  left 0
+  bottom -125px
+
+.brain-piece2
+  left -45px
+  bottom 15%
+
+.brain-piece3
+  top 40%
+  left -105px
+
+.brain-piece4
+  top 5%
+  left -90px
+  z-index 5
+
+.brain-piece5
+  left 50%
+  top -50px
+
+.brain-piece6
+  top -10px
+  right -105px
+  z-index 5
+
+.brain-piece7
+  top 35%
+  right -50px
+
+.brain-piece8
+  right 0
+  bottom 45px
+
+.brain-piece9
+  right 30%
+  bottom 40px
+
+.brain-piece10
+  left 30%
+  bottom 45px
+
+/*ADMIN*/
+
+.authorization
+  position fixed
+  z-index 5
+  top 250px
+  left 50%
+  margin-left -238px
+  width 476px
+  height 201px
+  background url(/img/login-background.png)
+  display flex
+  flex-direction column
+  justify-content space-between
+  align-items center
+  padding 25px
+  form
+    display flex
+    flex-direction column
+    justify-content space-between
+    align-items center
+    height 100%
+  span
+    font-family secondary-font
+    font-size 25px
+    margin-bottom 10px
+  &.hidden
+    display none
+
+/*ADAPTIVE*/
+
+.mobile-brain
+  display none
+
+.mobile-menu
+  display none
+
+.mobile-menu-button
+  display none
+  
+.swiper-container
+  display none
+
+.mobile-main-page-slogan
+  display none
+
+@media screen and (max-width: 768px)
+  body
+    width 100%
+    overflow-x hidden
+    overflow-y auto
+
+  .header-content
+    flex-direction column
+    justify-content center
+    align-items flex-start
+    height auto
+    width 100%
+
+  .header-logo
+    margin 20px 0 10px
+    width 100%
+    justify-content center
+    height auto
+  
+  .header-right
+    width 400px
+    margin-bottom 60px
+    flex-direction row
+    justify-content space-between
+    margin 0 auto 25px
+
+  .header-contacts
+    justify-content center
+    align-items flex-start
+
+  .header-menu
+    display none
+    
+  .footer-content
+    width 100%
+    justify-content center
+    .footer-right-slogan
+      display none
+
+  .mobile-menu-button
+    display flex
+    flex-direction column
+    justify-content center
+    span
+      border 2px solid black
+      border-radius 50%
+      padding 8px
+      font-size 25px
+      cursor pointer
+      &:hover
+        color link-color-hover
+
+  .mobile-menu
+    display block
+    position absolute
+    z-index 3
+    background url(/img/menu-adaptive.png)
+    padding 45px 20px 20px
+    right 20px
+    top -80px
+    transition ease-out 0.5s
+    height 275px
+    background-size cover
+    left 50%
+    width 151px
+    margin-left 105px
+    &.open
+      top 200px
+    ul
+      display flex
+      flex-direction column
+      align-items center
+      li
+        margin none
+        min-height 20px
+        margin-bottom 10px
+  
+  .main-page-content,
+  .branding-page-content,
+  .creative-page-content,
+  .reengineering-page-content,
+  .marketing-page-content,
+  .team-page-content,
+  .contacts-page-content
+    width 480px
+  
+  .big-brain
+    display none
+
+  .mobile-brain
+    display block
+
+  .main-page-slogan
+    font-size 26px
+    bottom 125px
+  
+  .ellipse
+    display none
+  
+  .counter
+    bottom 30px
+    left 290px
+    width 180px
+    img
+      width 100%
+  
+  .hover-brain-branding,
+  .hover-brain-creative,
+  .hover-brain-reengineering,
+  .hover-brain-marketing,
+  .brain-pink,
+  .brain-gray
+    width 400px
+  
+  .counter-numbers
+    bottom 6px
+    right 4px
+    width 72px
+    height 48px
+    font-size 27px
+    padding-left 10px
+    line-height 48px
+  
+  .product-page
+    background none
+  
+  .product-page-content
+    flex-direction column
+    width 480px
+    .product-info
+      margin-bottom 30px
+    div
+      position relative
+      top auto !important
+      left auto !important
+      bottom auto !important
+      width 100%
+      img
+        width 100%
+
+  .team-list
+    display none
+
+  .swiper-container
+    display flex
+    flex-direction column
+    justify-content flex-end
+    .swiper-wrapper
+      height auto
+    .team-member
+      display flex
+      flex-direction column
+      justify-content flex-end
+      align-items center
+      text-align center
+    .info
+      width 180px
+      height 150px
+    .swiper-pagination
+      position relative
+      top auto
+      left auto
+      bottom auto
+    .swiper-pagination-bullet
+      background link-color-hover
+      z-index 4
+    .swiper-button-prev
+      background url(/img/arrow-left.png) no-repeat
+      background-size contain
+    .swiper-button-next
+      background url(/img/arrow-right.png) no-repeat
+      background-size contain
+
+  .contacts-page
+    margin-top -45px
+
+  #map
+    min-height 800px
+
+  .form-field
+    left 50%
+    margin-left -170px
+  
+  .brain-piece
+    display none !important
+
+@media screen and (max-width: 480px)
+  header
+    height 200px
+
+  .header-content
+    height 100%
+    padding-bottom 20px
+    justify-content space-around
+
+  .header-logo
+    a
+      img
+        width 80%
+        height 80%
+        margin 0 auto
+
+  .header-right
+    width 240px
+  
+  .header-contacts
+    .glyphicon
+      font-size 14px
+    .header-mail
+      font-size 13px
+    .header-phone
+      font-size 21px
+
+  .mobile-menu
+    margin-left 15px
+    top -100px
+    &.open
+      top 155px
+
+  .main-page-content
+    width 320px
+    min-height 300px
+  
+  .brain
+    width 300px
+
+  .counter
+    bottom 40px
+    left 190px
+    width 115px
+
+  .counter-numbers 
+    bottom 6px
+    right 0px
+    width 50px
+    height 30px
+    font-size 20px
+    padding-left 5px
+    line-height 31px
+  
+  .main-page-slogan
+    display none
+    
+  .mobile-main-page-slogan
+    display block
+    margin 15px auto
+    width 210px
+    text-align center
+  
+  .product-page
+    margin-top 0
+    padding-top 0
+    margin-left 0
+    padding-left 0
+
+  .product-page-content
+    width 320px
+    padding 0 20px
+  
+  .team-page-content
+    width 320px
+
+  .form-field 
+    left 50%
+    margin-left -184px
+
+  .swiper-container
+    padding-top 10px
+
+  .footer-left-slogan
+    font-size 20px

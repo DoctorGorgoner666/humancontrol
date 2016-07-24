@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  main.contacts-page.hidden
+    #map
+    .contacts-page-content
+      .form-field
+        form
+          h1 Напишите нам - мы обязательно с вами свяжемся!
+          input(type="text" name="name" placeholder="Имя")
+          input(type="email" name="email" placeholder="E-mail")
+          input(type="tel" name="phone" placeholder="Телефон")
+          textarea(name="message" placeholder="Текст сообщения")
+          input.submit(type="submit" value="Отправить")
+
+  script
+    :coffee-script
+      document.location.href = "humancontrol.html#contacts"

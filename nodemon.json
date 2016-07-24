@@ -1,0 +1,7 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    "public",
+    "build"
+  ]
+}
