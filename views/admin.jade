@@ -21,13 +21,13 @@ html
             td.button-column
           tr
             td
-              input(type="text" name="name" placeholder="Имя")
+              input.name(type="text" name="name" placeholder="Имя")
             td
-              input(type="email" name="email" placeholder="Email")
+              input.emai(type="email" name="email" placeholder="Email")
             td
-              input(type="tel" name="phone" placeholder="Телефон")
+              input.phone(type="tel" name="phone" placeholder="Телефон")
             td
-              textarea(name="message" placeholder="Комментарий")
+              textarea.comment(name="message" placeholder="Комментарий")
             td
               button.add Добавить
             td
@@ -37,16 +37,16 @@ html
             tr
               td
                 span.display-contact= contact.name
-                input.edit-contact(type="text" name="name" placeholder="Имя" value=contact.name)
+                input.name.edit-contact(type="text" name="name" placeholder="Имя" value=contact.name)
               td
                 span.display-contact= contact.email
-                input.edit-contact(type="email" name="email" placeholder="Имя" value=contact.email)
+                input.email.edit-contact(type="email" name="email" placeholder="Имя" value=contact.email)
               td
                 span.display-contact= contact.phone
-                input.edit-contact(type="tel" name="phone" placeholder="Имя" value=contact.phone)
+                input.phone.edit-contact(type="tel" name="phone" placeholder="Имя" value=contact.phone)
               td
                 span.display-contact= contact.message
-                textarea.edit-contact(name="message" placeholder="Имя" value=contact.message)
+                textarea.message.edit-contact(name="message" placeholder="Имя" value=contact.message)
               td
                 button.display-contact.edit Редактировать
                 button.edit-contact.save Сохранить
@@ -61,3 +61,18 @@ html
         $(e.target).closest("tr").find("textarea").val("ZORG!")
       $(".cancel").on "click", (e) ->
         $(e.target).closest("tr").find(".display-contact").show().siblings(".edit-contact").hide()
+
+      # Редактирование контактов
+
+      $('.add').on 'click',  (e) ->
+        e.preventDefault()
+        $.ajax {
+          type: 'POST',
+          url: '/request',
+          data: $('e.target').closest("tr").find(".name").serialize() + $('e.target').closest("tr").find(".email").serialize() + $('e.target').closest("tr").find(".phone").serialize() + $('e.target').closest("tr").find(".message").serialize()
+          success: (data) ->
+            ???
+          error: (error) ->
+            ???
+          dataType: 'JSON'
+        }

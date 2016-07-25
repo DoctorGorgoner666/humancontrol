@@ -305,3 +305,34 @@ html
 
         brainPulse()
 
+        # Авторизация
+
+        $('.login').on 'click',  (e) ->
+          e.preventDefault()
+          $.ajax {
+            type: 'POST',
+            url: '/ajax-login',
+            data: $('e.target').closest("form").serialize(),
+            success: (data) ->
+              document.location.href = window.location.origin + '/admin'
+            error: (error) ->
+              if error.status === 401
+                $(".login-alert").text "Неверно!"
+            dataType: 'JSON'
+          }
+
+        # Отправка формы контактов
+
+        $('.submit').on 'click',  (e) ->
+          e.preventDefault()
+          $.ajax {
+            type: 'POST',
+            url: '/request',
+            data: $('e.target').closest("form").serialize(),
+            success: (data) ->
+              ???
+              $('e.target').siblings("h1").text "Ваше сообщение успешно отправлено!"
+            error: (error) ->
+              ???
+            dataType: 'JSON'
+          }
