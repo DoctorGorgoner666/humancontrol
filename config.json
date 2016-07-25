@@ -1,0 +1,19 @@
+{
+  "development":  {
+        "port": 3019,
+        "url": "mongodb://localhost/brain",
+		    "adminEmail": "neuro-enlightened",
+        "adminPass": "brain-damage"
+                  },
+  "production":   {
+		    "ip": "188.166.19.136",
+		    "port": 3021,
+		    "baseUrl": "what?",
+        "url": "mongodb://localhost/brain",
+		    "adminEmail": "neuro-enlightened",
+        "adminPass": "brain-damage"
+},
+  "test":         {
+                    "url": "mongodb://localhost/test"
+                  }
+}
