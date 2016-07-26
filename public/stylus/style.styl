@@ -417,6 +417,8 @@ footer
     font-family secondary-font
     font-size 12px
     margin-bottom 15px
+  img
+    max-height 100%
 
 .team-list
   display flex
@@ -595,7 +597,7 @@ textarea
 .mobile-main-page-slogan
   display none
 
-@media screen and (max-width: 768px)
+@media all and (max-width: 768px)
   body
     width 100%
     overflow-x hidden
@@ -781,7 +783,7 @@ textarea
   .brain-piece
     display none !important
 
-@media screen and (max-width: 480px)
+@media all and (max-width: 480px)
   header
     height 200px
 
@@ -809,8 +811,9 @@ textarea
       font-size 21px
 
   .mobile-menu
-    margin-left 15px
     top -100px
+    right 0
+    left auto
     &.open
       top 155px
 
@@ -843,6 +846,8 @@ textarea
     margin 15px auto
     width 210px
     text-align center
+    font-family heading-font
+    font-size 22px
   
   .product-page
     margin-top 0

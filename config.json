@@ -7,7 +7,7 @@
                   },
   "production":   {
 		    "ip": "188.166.19.136",
-		    "port": 3021,
+		    "port": 3051,
 		    "baseUrl": "what?",
         "url": "mongodb://localhost/brain",
 		    "adminEmail": "neuro-enlightened",

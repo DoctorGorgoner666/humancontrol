@@ -6,11 +6,12 @@ crud = {}
 crud.create = (req, res) ->
   Resource = mongoose.model 'Request'
   rec = new Resource(req.body)
-  rec.save (err, resource) ->
+  rec.save (err, user) ->
     if err then res.json {'ERROR': err}
-    else res.json {'SUCCESS': true}
+
 
 crud.retrieve = (req, res) ->
   Resource = mongoose.model 'Request'
-  Resource.find {}, (err, resource) ->
-    res.json {'Requests': resource}
+  Resource.find {}, (err, requests) ->
+    if err then res.json {'ERROR': err}
+    else res.json {'Requests': true, requests: requests}

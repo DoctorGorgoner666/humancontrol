@@ -20,18 +20,16 @@ env  =  process.env.NODE_ENV
 conf = nconf.get env
 
 router.get '/', (req, res)->
-  res.redirect 'app'
-
-router.get '/app', (req, res)->
-  res.render 'index',
-
+  res.render 'index'
 
 # Создание администратора
-router.route '/create_admin'
+router.route '/install'
   .get (req, res) ->
+    debug 'Creating user account...'
     User.findOne {accountType: 'admin'}
       .exec()
       .then (user)->
+        debug user
         if user is null
           User.register new User(
             {
@@ -49,6 +47,7 @@ router.route '/create_admin'
               if err
                 debug err
               else
+                debug 'new user', user
                 res.json {success: 'Admin user created'}
         else
           res.json {error: 'Admin user already register'}
@@ -61,12 +60,11 @@ router.route '/login'
       res.redirect 'admin'
     else if req.isAuthenticated()
       if req.user.confirmed
-        res.redirect 'app'
+        res.redirect '/'
       else
         res.render 'admin/login', {error: '', confirmed: false}
     else
       res.render 'admin/login', {error: '', confirmed: null}
-
 
 # LOGIN
 router.route '/request'
@@ -76,11 +74,10 @@ router.route '/request'
     else
       res.json {error: 'Wrong way'}
   .post (req, res) ->
-    # if req.isAuthenticated() and req.user.accountType is 'admin'
-    request.create(req, res)
-    # else
-      # res.json {error: 'Wrong way'}
-
+    if req.isAuthenticated() and req.user.accountType is 'admin'
+      request.create(req, res)
+    else
+      res.json {error: 'Wrong way'}
 
 # LOGIN
 router.route '/ajax-login'
@@ -92,21 +89,6 @@ router.route '/ajax-login'
             login: 'ok'
             admin: true
         }
-      else if !req.user.confirmed
-        res.json {
-          error:
-            confirmed: false
-        }
-      else if req.user.banned
-        res.json {
-          error:
-            banned: true
-        }
-      else if req.user.confirmed && !req.user.banned
-        res.json {
-          success:
-            login: 'ok'
-        }
       else
         debug 'Ajax-login error'
     )
@@ -114,7 +96,7 @@ router.route '/ajax-login'
 # LOGOUT
 router.get '/sign-out', (req, res) ->
   req.logout()
-  res.redirect '/login'
+  res.redirect '/'
 
 ###
 
@@ -122,19 +104,17 @@ router.get '/sign-out', (req, res) ->
 
 ###
 
-
 router.get '/admin', (req, res, next) ->
   if req.isAuthenticated() and req.user.accountType is 'admin'
     next()
   else
-    res.redirect '/login'
+    res.redirect '/'
 
 router.get '/admin/*', (req, res, next) ->
   if req.isAuthenticated() and req.user.accountType is 'admin'
     next()
   else
-    res.redirect '/login'
-
+    res.redirect '/'
 
 # ADMIN
 router.route '/admin'
@@ -143,6 +123,5 @@ router.route '/admin'
       page: 'This page'
       msg: 'Yo'
     }
-
 
 module.exports = router

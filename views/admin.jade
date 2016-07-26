@@ -4,6 +4,7 @@ html
     title HUMANCONTROL-ADMIN
     link(rel='stylesheet' href='css/admin.css')
     script(src="https://code.jquery.com/jquery-3.0.0.js" integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo=" crossorigin="anonymous")
+    script(type="text/javascript" src="admin.js")
   body
     main
       table
@@ -53,26 +54,3 @@ html
               td
                 button.display-contact.delete Удалить
                 button.edit-contact.cancel Отменить
-
-  script
-    :coffee-script
-      $(".edit").on "click", (e) ->
-        $(e.target).closest("tr").find(".display-contact").hide().siblings(".edit-contact").show()
-        $(e.target).closest("tr").find("textarea").val("ZORG!")
-      $(".cancel").on "click", (e) ->
-        $(e.target).closest("tr").find(".display-contact").show().siblings(".edit-contact").hide()
-
-      # Редактирование контактов
-
-      $('.add').on 'click',  (e) ->
-        e.preventDefault()
-        $.ajax {
-          type: 'POST',
-          url: '/request',
-          data: $('e.target').closest("tr").find(".name").serialize() + $('e.target').closest("tr").find(".email").serialize() + $('e.target').closest("tr").find(".phone").serialize() + $('e.target').closest("tr").find(".message").serialize()
-          success: (data) ->
-            ???
-          error: (error) ->
-            ???
-          dataType: 'JSON'
-        }

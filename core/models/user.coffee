@@ -16,7 +16,6 @@ nconf                 = require 'nconf'
 nconf.argv().env().file  file: './config.json'
 
 env  =  process.env.NODE_ENV || 'development'
-debug 'ENV', process.env.NODE_ENV
 conf = nconf.get env
 
 Schema = mongoose.Schema
@@ -26,7 +25,6 @@ schema = new mongoose.Schema
     type: String
   accountType:
     type: String
-    default: 'admin'
   username:
     type: String
   name:
@@ -104,8 +102,10 @@ schema.pre 'save', (next)->
       @emailToken = uuid.v4()
     if !@resetPasswordToken
       @resetPasswordToken = uuid.v4()
+    next()
   else
     next()
+
 
 schema.statics.confirm = (token, cb)->
   return @findOneAndUpdate(
